@@ -12,8 +12,9 @@ A responsive web application showcasing popular and recommended travel destinati
 - Bottom menu bar for quick access to key features.
 
 ## Demo
-
 ![login](https://github.com/user-attachments/assets/4087fa7a-eb06-44bd-a882-d8138fa44f21)
+![home](https://github.com/user-attachments/assets/524c8a9a-eefb-4d30-becc-4dca1bb67534)
+![details](https://github.com/user-attachments/assets/78091837-8952-4a52-b180-d766ba1a3df2)
 
 
 ## Installation
