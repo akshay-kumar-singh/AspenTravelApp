@@ -10,7 +10,12 @@ const PopularSection = ({ images }) => {
 
   return (
     <div>
-      <h2 className="text-2xl font-semibold mb-4">Popular</h2>
+      <div className="flex items-center justify-between mb-4">
+        <h2 className="text-2xl font-semibold">Popular</h2>
+        <h2 className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300">
+          Show All
+        </h2>
+      </div>
       <div className="flex overflow-x-scroll space-x-4 py-4">
         {images.map((image) => (
           <div
