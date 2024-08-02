@@ -11,12 +11,11 @@ const RecommendedSection = ({ images }) => {
   return (
     <div>
       <h2 className="text-2xl font-semibold mb-4">Recommended</h2>
-      <div className="flex overflow-x-scroll space-x-4 py-4">
+      <div className="flex space-x-4 overflow-x-auto scrollbar-hide">
         {images.map((image) => (
           <div
             key={image.id}
-            className="relative cursor-pointer flex-shrink-0"
-            style={{ width: 'calc(50% - 1rem)' }}
+            className="relative cursor-pointer flex-none w-1/2"
             onClick={() => handleImageClick(image)}
           >
             <img
@@ -38,4 +37,5 @@ const RecommendedSection = ({ images }) => {
 };
 
 export default RecommendedSection;
+
 

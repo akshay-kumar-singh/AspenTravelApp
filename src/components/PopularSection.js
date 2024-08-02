@@ -1,5 +1,7 @@
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AiFillHeart } from 'react-icons/ai';
 
 const PopularSection = ({ images }) => {
   const navigate = useNavigate();
@@ -8,20 +10,27 @@ const PopularSection = ({ images }) => {
     navigate(`/details/${image.id}`, { state: { image } });
   };
 
+  const handleSeeAllClick = () => {
+    navigate('/popular');
+  };
+
   return (
     <div>
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex justify-between items-center mb-4">
         <h2 className="text-2xl font-semibold">Popular</h2>
-        <h2 className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300">
-          Show All
-        </h2>
+        <button
+          onClick={handleSeeAllClick}
+          className="text-blue-500 hover:underline mr-6"
+          style={{ textDecoration: 'none' }}
+        >
+          See All
+        </button>
       </div>
-      <div className="flex overflow-x-scroll space-x-4 py-4">
+      <div className="flex space-x-4 overflow-x-auto scrollbar-hide">
         {images.map((image) => (
           <div
             key={image.id}
-            className="relative cursor-pointer flex-shrink-0"
-            style={{ width: 'calc(50% - 1rem)' }}
+            className="relative cursor-pointer flex-none w-1/2"
             onClick={() => handleImageClick(image)}
           >
             <img
@@ -29,11 +38,14 @@ const PopularSection = ({ images }) => {
               alt={image.alt}
               className="w-full h-48 object-cover rounded-lg"
             />
-            <div className="absolute bottom-4 left-4 bg-black bg-opacity-50 text-white p-2 rounded-lg">
+            <div className="absolute bottom-4 left-4 bg-black bg-opacity-50 text-white p-2 rounded-lg ">
               <div className="text-lg font-semibold">{image.title}</div>
               <div className="flex items-center space-x-1 text-yellow-400">
                 <span>{image.rating}</span>
               </div>
+            </div>
+            <div className="absolute bottom-4 right-4 bg-white rounded-full p-2">
+              <AiFillHeart className="text-red-500" size={24} />
             </div>
           </div>
         ))}
@@ -43,3 +55,5 @@ const PopularSection = ({ images }) => {
 };
 
 export default PopularSection;
+
+

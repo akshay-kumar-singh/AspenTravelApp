@@ -1,19 +1,26 @@
 import React from 'react';
 
-const Tabs = ({ activeTab, setActiveTab }) => (
-  <div className="mb-8">
-    <div className="flex space-x-4">
-      {['location', 'hotels', 'foods', 'adventure'].map((tab) => (
-        <button
+const Tabs = ({ activeTab, setActiveTab }) => {
+  const tabs = ['Location', 'Hotels', 'Foods', 'Adventure'];
+
+  return (
+    <div className="flex justify-around mt-4 mb-4">
+      {tabs.map((tab) => (
+        <span
           key={tab}
-          className={`py-2 px-4 ${activeTab === tab ? 'border-b-2 border-blue-500 text-blue-500' : 'text-gray-700'}`}
-          onClick={() => setActiveTab(tab)}
+          onClick={() => setActiveTab(tab.toLowerCase())}
+          className={`cursor-pointer text-lg px-4 py-2 rounded-full ${
+            activeTab === tab.toLowerCase()
+              ? 'text-blue-500 bg-gray-200 font-semibold'
+              : 'text-gray-500'
+          }`}
+          style={{ textDecoration: 'none' }} 
         >
-          {tab.charAt(0).toUpperCase() + tab.slice(1)}
-        </button>
+          {tab}
+        </span>
       ))}
     </div>
-  </div>
-);
+  );
+};
 
 export default Tabs;
