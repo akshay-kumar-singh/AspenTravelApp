@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { IoMdArrowDropdown, IoMdWifi, IoMdRestaurant, IoMdWater, IoMdTrophy, IoMdArrowForward } from 'react-icons/io'; 
 import { AiFillHeart } from 'react-icons/ai'; 
 
 const LocationDetails = () => {
-  const { id } = useParams();
   const location = useLocation();
   const { image } = location.state || { image: {} };
   const [isExpanded, setIsExpanded] = useState(false);
